@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&display=swap');
+
+* {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+.body_wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(235, 245, 241);
+}
+
+.header_wrapper {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(218, 76, 76);
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blog_logo {
+  margin-left: 50px;
+  font-size: 36px;
+  font-weight: medium;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.blog_logo:active, /* активная/посещенная ссылка */
+.blog_logo:hover,  /* при наведении */
+.blog_logo {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.log_block {
+  width: 150px;
+  margin-right: 50px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sign_up {
+  padding: 5px 10px;
+  border: 2px solid aliceblue;
+  border-radius: 10px;
+}
+
+.log_elem {
+  cursor: pointer;
+  transition-duration: .3s;
+}
+
+.log_in:hover {
+  transform: scale(1.1);
+}
+
+.sign_up:hover {  
+  color: rgb(218, 76, 76);
+  background-color: aliceblue;
+}
