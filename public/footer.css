@@ -1,0 +1,8 @@
+.footer_wrapper {
+  background-color: rgb(218, 76, 76);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
