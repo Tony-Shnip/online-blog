@@ -1,0 +1,31 @@
+{
+  "name": "online-blog",
+  "version": "1.0.0",
+  "description": "Online blog on node.js + vue.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tony-Shnip/online-blog.git"
+  },
+  "keywords": [
+    "online-blog",
+    "blog",
+    "node.js"
+  ],
+  "author": "Anton Shnip <shnip12345@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tony-Shnip/online-blog/issues"
+  },
+  "homepage": "https://github.com/Tony-Shnip/online-blog#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
