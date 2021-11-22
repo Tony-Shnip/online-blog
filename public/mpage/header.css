@@ -7,13 +7,13 @@
 
 .body_wrapper {
   width: 100%;
-  height: 100vw;
+  height: 100vh;
   background-color: rgb(235, 245, 241);
 }
 
 .header_wrapper {
   width: 100%;
-  height: 80px;
+  height: 8%;
   background-color: rgb(218, 76, 76);
   color: aliceblue;
   display: flex;
@@ -24,32 +24,41 @@
 }
 
 .blog_logo {
-  margin-left: 50px;
-  font-size: 36px;
+  margin-left: 3%;
+  font-size: 2.5em;
   font-weight: medium;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.blog_logo:active, /* активная/посещенная ссылка */
+.blog_logo:hover,  /* при наведении */
+.blog_logo {
+  text-decoration: none;
+  color: aliceblue;
 }
 
 .log_block {
-  width: 150px;
-  margin-right: 50px;
-  font-size: 18px;
+  width: 50%;
+  margin-right: 3%;
+  font-size: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: right;
 }
 
 .sign_up {
   padding: 5px 10px;
+  margin-left: 4%;
   border: 2px solid aliceblue;
   border-radius: 10px;
 }
 
 .log_elem {
   cursor: pointer;
-  transition-duration: .5s;
+  transition-duration: .3s;
 }
 
 .log_in:hover {

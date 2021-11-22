@@ -1,8 +1,10 @@
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
+const { connections } = require('mongoose')
 
-const server = http.createServer((req, res) => {
+
+let server = http.createServer((req, res) => {
   let filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url)
   const ext = path.extname(filePath)
   let contentType = 'text/html'
@@ -40,6 +42,22 @@ const server = http.createServer((req, res) => {
     }
   })
 })
+
+let io = require('socket.io')(server)
+
 server.listen(3000, () => {
   console.log('Server has been started...');
+})
+
+let users = [];
+let connected = [];
+
+io.sockets.on('connection', (socket) => {
+  console.log('Connected... ');
+  connected.push(socket)
+
+  socket.on('disconnect', (data) => {
+    connected.splice(connected.indexOf(socket), 1)
+    console.log('Disconnected...');
+  })
 })

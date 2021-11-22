@@ -1,0 +1,62 @@
+.main_wrapper {
+  margin: auto;
+  height: 84%;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.message_form_wrapper {
+  width: 40%;
+}
+
+#message_form {
+  margin-top: 3%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+#message_form #username {
+  outline: none;
+  width: 74%;
+  height: 25px;
+  font-size: 1rem;
+  margin-bottom: 3%;
+  margin-top: 1%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0 3%;
+}
+
+#message_form textarea {
+  resize: none;
+  outline: none;
+  overflow: hidden;
+  width: 74%;
+  height: 75px;
+  font-size: 1rem;
+  max-height: 250px;
+  margin-bottom: 3%;
+  margin-top: 1%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0 3%;
+}
+
+#message_form .message_submit {
+  width: 25%;
+  height: 25px;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(218, 76, 76);
+  color: aliceblue;
+}
+
+.message_container_wrapper {
+  width: 60%;
+  background-color: rgb(105, 79, 79);
+}
