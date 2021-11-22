@@ -49,15 +49,18 @@ server.listen(3000, () => {
   console.log('Server has been started...');
 })
 
-let users = [];
 let connected = [];
 
 io.sockets.on('connection', (socket) => {
-  console.log('Connected... ');
-  connected.push(socket)
+  console.log('Connected: ' + socket.id);
+  connected.push(socket);
 
   socket.on('disconnect', (data) => {
     connected.splice(connected.indexOf(socket), 1)
-    console.log('Disconnected...');
+    console.log('Disconnected: ' + socket.id);
+  })
+
+  socket.on('send message', (name, message) => {
+    io.sockets.emit('add message', {name: name, message: message})
   })
 })

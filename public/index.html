@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="./mpage/main.css">
   <link rel="icon" href="./images/icon.png" type="image/x-icon">
   <script src="./modal/modal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
 
@@ -42,16 +41,24 @@
     </header>
 
     <main class="main_wrapper">
+
       <div class="message_form_wrapper">
-        <form action="" id="message_form">
+        <form id="message_form">
           <label for="username">Name</label>
-          <input type="text" name="username" id="username" placeholder="Your name">
+          <input type="text" name="username" id="username" placeholder="Name" maxlength="15">
           <label for="message">Message</label>
-          <textarea name="message" id="message" placeholder="Your message"></textarea>
-          <input type="button" value="Send" class="message_submit">
+          <textarea name="message" id="message" placeholder="Message" maxlength="128"></textarea>
+          <input type="submit" value="Send" class="message_submit">
         </form>
       </div>
-      <div class="message_container_wrapper"></div>
+
+      <div class="message_container_wrapper">
+        <p class="message_container_text">Chat</p>
+        <div class="scroll">
+          <div id="all_messages"></div>
+        </div>
+      </div>
+
     </main>
 
     <footer class="footer_wrapper"></footer>
@@ -64,6 +71,21 @@
   <script>
     $(function() {
       let socket = io.connect();
+      let $form = $("#message_form");
+      let $username = $("#username");
+      let $message = $("#message");
+      let $all_messages = $("#all_messages");
+
+      $form.submit( (event) => {
+        event.preventDefault();
+        if ($username.val() === '' || $message.val() === '') return;
+        socket.emit('send message', $username.val(), $message.val());
+        $message.val('');
+      });
+
+      socket.on('add message', (data) => {
+        $all_messages.append('<div class="msg"><p class="msg_name">' + data.name + '</p><div class="msg_text">' + data.message + '</div></div>');
+      })
     });
   </script>
 </body>
